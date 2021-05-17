@@ -57,3 +57,23 @@ Team_5_Ailie=str("Ailie - ATK:7 DEF:4")
 Team_5_Barrie=str("Barrie - ATK:6 DEF:3")
 Team_5_Caitlin=str("Caitlin - ATK:4 DEF:2")
 Team_5_Farand_GK=str("Farand - ATK:1 DEF:5")
+
+
+Team_6_main=str("Team 6 Italy: Alberto, Beatrice, Calynda, Dani, Elena, Fabian")
+Team_6_Alberto=str("Alberto - ATK:4 DEF:3")
+Team_6_Beatrice=str("Beatrice - ATK:5 DEF:3")
+Team_6_Calynda=str("Calynda - ATK:5 DEF:2")
+Team_6_Dani=str("Dani - ATK:6 DEF:1")
+Team_6_Elena=str("Elena - ATK:8 DEF:3")
+Team_6_Fabian_GK=str("Fabian GK - ATK:2 DEF:6")
+
+
+Team_7_main=str("Team 7 India: Aja, Akhil, Bhavya, Anusha, Arlet, Chanda")
+Team_7_Aja=str("Aja - ATK:5 DEF:2")
+Team_7_Akhil=str("Akhil - ATK:4 DEF:3")
+Team_7_Bhavya=str("Bhavya - ATK:7 DEF:3")
+Team_7_Anusha=str("Anusha - ATK:6 DEF:2")
+Team_7_Arlet=str("Arlet - ATK:6 DEF:3")
+Team_7_Chanda=str("Chanda - ATK:1 DEF:6")
+
+
