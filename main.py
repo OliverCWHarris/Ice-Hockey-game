@@ -9,11 +9,15 @@
 
 
 
+from asyncio import FIRST_COMPLETED
 import random
 import time
 
+menu=str("in")
+fn_menu=str("in")
+#game_menu_choice=str("")
 
-
+#from here to next # is string variables for each team
 Team_1_main=str("Team 1 UK: Steve, John, Dave, Barry, Stuart, Katy")
 Team_1_Steve=str("Steve - ATK:4 DEF:5")
 Team_1_John=str("John - ATK:7 DEF:1")
@@ -50,7 +54,7 @@ Team_4_Vladimir=str("Vladimir - ATK:6 DEF:6")
 Team_4_Evgenii_GK=str("Evgenii GK - ATK:3 DEF:7")
 
 
-Team_5_min=str("Team 5 France: Abella, Alice, Ailie, Barrie, Caitlin, Farand")
+Team_5_main=str("Team 5 France: Abella, Alice, Ailie, Barrie, Caitlin, Farand")
 Team_5_Abella=str("Abella - ATK:4 DEF:2")
 Team_5_Alice=str("Alice - ATK:5 DEF:1")
 Team_5_Ailie=str("Ailie - ATK:7 DEF:4")
@@ -74,6 +78,282 @@ Team_7_Akhil=str("Akhil - ATK:4 DEF:3")
 Team_7_Bhavya=str("Bhavya - ATK:7 DEF:3")
 Team_7_Anusha=str("Anusha - ATK:6 DEF:2")
 Team_7_Arlet=str("Arlet - ATK:6 DEF:3")
-Team_7_Chanda=str("Chanda - ATK:1 DEF:6")
+Team_7_Chanda_GK=str("Chanda GK - ATK:1 DEF:6")
+#end of player string variables
+
+#from here to next # is the printing statements for each team
+def team_1_menu():
+    print(Team_1_main)
+    time.sleep(4)
+    print(Team_1_Steve)
+    time.sleep(2)
+    print(Team_1_John)
+    time.sleep(2)
+    print(Team_1_Dave)
+    time.sleep(2)
+    print(Team_1_Barry)
+    time.sleep(2)
+    print(Team_1_Stuart)
+    time.sleep(2)
+    print(Team_1_Katy_GK)
+
+def team_2_menu():
+    print(Team_2_main)
+    time.sleep(4)
+    print(Team_2_Mateo)
+    time.sleep(2)
+    print(Team_2_Sofia)
+    time.sleep(2)
+    print(Team_2_Isabella)
+    time.sleep(2)
+    print(Team_2_Hugo)
+    time.sleep(2)
+    print(Team_2_Lucas)
+    time.sleep(2)
+    print(Team_2_Matias_GK)
+
+def team_3_menu():
+    print(Team_3_main)
+    time.sleep(4)
+    print(Team_3_Jakson)
+    time.sleep(2)
+    print(Team_3_Noah)
+    time.sleep(2)
+    print(Team_3_Benjamin)
+    time.sleep(2)
+    print(Team_3_Emma)
+    time.sleep(2)
+    print(Team_3_Amelia)
+    time.sleep(2)
+    print(Team_3_Chloe_GK)
+
+def team_4_menu():
+    print(Team_4_main)
+    time.sleep(4)
+    print(Team_4_Adrik)
+    time.sleep(2)
+    print(Team_4_Aleksi)
+    time.sleep(2)
+    print(Team_4_Borya)
+    time.sleep(2)
+    print(Team_4_Dimitri)
+    time.sleep(2)
+    print(Team_4_Vladimir)
+    time.sleep(2)
+    print(Team_4_Evgenii_GK)
+
+def team_5_menu():
+    print(Team_5_main)
+    time.sleep(4)
+    print(Team_5_Abella)
+    time.sleep(2)
+    print(Team_5_Alice)
+    time.sleep(2)
+    print(Team_5_Ailie)
+    time.sleep(2)
+    print(Team_5_Barrie)
+    time.sleep(2)
+    print(Team_5_Caitlin)
+    time.sleep(2)
+    print(Team_5_Farand_GK)
+
+def team_6_menu():
+    print(Team_6_main)
+    time.sleep(4)
+    print(Team_6_Alberto)
+    time.sleep(2)
+    print(Team_6_Beatrice)
+    time.sleep(2)
+    print(Team_6_Calynda)
+    time.sleep(2)
+    print(Team_6_Dani)
+    time.sleep(2)
+    print(Team_6_Elena)
+    time.sleep(2)
+    print(Team_6_Fabian_GK)
+
+def team_7_menu():
+    print(Team_7_main)
+    time.sleep(4)
+    print(Team_7_Aja)
+    time.sleep(2)
+    print(Team_7_Akhil)
+    time.sleep(2)
+    print(Team_7_Bhavya)
+    time.sleep(2)
+    print(Team_7_Anusha)
+    time.sleep(2)
+    print(Team_7_Arlet)
+    time.sleep(2)
+    print(Team_7_Chanda_GK)
+#end of team printing statements
+
+#from here to next # is player team selection
+def game_menu_p1():
+    global player_1_team
+    if game_menu_t_choice=="1":
+            team_1_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("1")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="2":
+            team_2_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("2")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="3":
+            team_3_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("3")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="4":
+            team_4_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("4")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="5":
+            team_5_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("5")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="6":
+            team_6_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("6")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="7":
+            team_7_menu()
+            player_1_team=str(input("choose this team? y/n: "))
+            if player_1_team=="y":
+                player_1_team=str("7")
+            else:
+                game_menu_p1()
+    print("Your team is "&player_1_team)
+    main_menu()
+
+def game_menu_p2():
+    global player_2_team
+    if game_menu_t_choice=="1":
+            team_1_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("1")
+            else:
+                game_menu_p2()
+    elif game_menu_t_choice=="2":
+            team_2_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("2")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="3":
+            team_3_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("3")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="4":
+            team_4_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("4")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="5":
+            team_5_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("5")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="6":
+            team_6_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("6")
+            else:
+                game_menu_p1()
+    elif game_menu_t_choice=="7":
+            team_7_menu()
+            player_2_team=str(input("choose this team? y/n: "))
+            if player_2_team=="y":
+                player_2_team=str("7")
+            else:
+                game_menu_p1()
+    print("Your team is "&player_2_team)
+    main_menu()
+#end of player team selection
+
+#from here to next # is the actual game
+def main_menu_play():
+    global p_1_player
+    global p_2_player
+    if player_1_team=="1":
+        team_1_menu()
+    elif player_1_team=="2":
+        team_2_menu()
+    elif player_1_team=="3":
+        team_3_menu()
+    elif player_1_team=="4":
+        team_4_menu()
+    elif player_1_team=="5":
+        team_5_menu()
+    elif player_1_team=="6":
+        team_6_menu()
+    elif player_1_team=="7":
+        team_7_menu()
+    p_1_player=str(input("select player 1-7: "))
+    
+
+#end of game
 
 
+
+
+#from here to next # is player team selection menu
+def main_menu_player():
+    global game_menu_t_choice
+    game_menu_p_choice=str(input("Choose a player 1/2: "))
+    if game_menu_p_choice=="1":
+        game_menu_t_choice=str(input("Choose a team to view: 1,2,3,4,5,6,7: "))
+        game_menu_p1()
+    elif game_menu_p_choice=="2":
+        game_menu_t_choice=str(input("Choose a team to view: 1,2,3,4,5,6,7: "))
+        game_menu_p2()
+#end of player team selection menu
+
+
+
+
+
+
+#from here to next # is main menu
+def main_menu():
+    global game_menu_choice
+    game_menu_choice=str(input("Choose player or play? player/play: "))
+    if game_menu_choice=="player":
+        main_menu_player()
+    elif game_menu_choice=="play":
+        main_menu_play()
+#end of main menu
+
+
+
+
+
+#this is a very special line of code, it is how this whole proces starts and ends, my entire prodject depends of these 11 characters.
+main_menu()
