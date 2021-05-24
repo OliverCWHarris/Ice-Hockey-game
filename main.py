@@ -15,6 +15,8 @@ import time
 
 menu=str("in")
 fn_menu=str("in")
+global p_1_score
+p_1_score=0
 #game_menu_choice=str("")
 
 #from here to next # is string variables for each team
@@ -25,6 +27,20 @@ Team_1_Dave=str("Dave - ATK:5 DEF:3")
 Team_1_Barry=str("Barry - ATK:8 DEF:2")
 Team_1_Stuart=str("Stuart - ATK:6 DEF:4")
 Team_1_Katy_GK=str("Katy GK - ATK:2 DEF:6")
+Team_1_Steve_ATK=int(4)
+Team_1_John_ATK=int(7)
+Team_1_Dave_ATK=int(5)
+Team_1_Barry_ATK=int(8)
+Team_1_Stuart_ATK=int(6)
+Team_1_Katy_ATK=int(2)
+Team_1_Steve_DEF=int(5)
+Team_1_John_DEF=int(1)
+Team_1_Dave_DEF=int(3)
+Team_1_Barry_DEF=int(2)
+Team_1_Stuart_DEF=int(4)
+Team_1_Katy_DEF=int(6)
+
+
 
 
 Team_2_main=str("Team 2 Spain: Mateo, Sofia, Isabella, Hugo, Lucas, Matias")
@@ -240,7 +256,7 @@ def game_menu_p1():
                 player_1_team=str("7")
             else:
                 game_menu_p1()
-    print("Your team is "&player_1_team)
+    print("Your team is "+player_1_team)
     main_menu()
 
 def game_menu_p2():
@@ -294,7 +310,7 @@ def game_menu_p2():
                 player_2_team=str("7")
             else:
                 game_menu_p1()
-    print("Your team is "&player_2_team)
+    print("Your team is "+player_2_team)
     main_menu()
 #end of player team selection
 
@@ -302,6 +318,23 @@ def game_menu_p2():
 def main_menu_play():
     global p_1_player
     global p_2_player
+    global p_1_GK
+    global p_2_GK
+    if player_2_team=="1":
+        p_2_GK=Team_1_Katy_DEF
+    elif player_2_team=="2":
+        print("not done yet")
+    elif player_2_team=="3":
+        print("not done yet")
+    elif player_2_team=="4":
+        print("not done yet")
+    elif player_2_team=="5":
+        print("not done yet")
+    elif player_2_team=="6":
+        print("not done yet")
+    elif player_2_team=="7":
+        print("not done yet")
+    
     if player_1_team=="1":
         team_1_menu()
     elif player_1_team=="2":
@@ -317,6 +350,28 @@ def main_menu_play():
     elif player_1_team=="7":
         team_7_menu()
     p_1_player=str(input("select player 1-7: "))
+    if p_1_player=="1":
+        score=p_2_GK-Team_1_Steve_ATK
+    elif p_1_player=="2":
+        print("not done yet")
+    elif p_1_player=="3":
+        print("not done yet")
+    elif p_1_player=="4":
+        print("not done yet")
+    elif p_1_player=="5":
+        print("not done yet")
+    elif p_1_player=="6":
+        print("not done yet")
+    elif p_1_player=="7":
+        print("not done yet")
+    
+    if score>=0:
+        global p_1_score
+        p_1_score=p_1_score+1
+        p_1_score_str=str(p_1_score)
+        print("Score! Player 1 is on "+p_1_score_str)
+        main_menu_play()
+        
     
 
 #end of game
@@ -344,10 +399,10 @@ def main_menu_player():
 #from here to next # is main menu
 def main_menu():
     global game_menu_choice
-    game_menu_choice=str(input("Choose player or play? player/play: "))
+    game_menu_choice=str(input("Choose player or game? player/game: "))
     if game_menu_choice=="player":
         main_menu_player()
-    elif game_menu_choice=="play":
+    elif game_menu_choice=="game":
         main_menu_play()
 #end of main menu
 
